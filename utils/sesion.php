@@ -1,6 +1,10 @@
 <?php
 session_start();
 
+function sesion_name() {
+    return isset($_SESSION['usuario']) ? $_SESSION['usuario'] : "???";
+}
+
 function index() {
     if(isset($_SESSION['usuario'])) {
         header("Location: vistas/clientes.php");
